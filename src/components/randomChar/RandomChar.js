@@ -22,7 +22,7 @@ class RandomChar extends Component {
   }
 
   updateChar = () => {
-    const id = Math.floor(Math.random() * (1010789 - 1009146) + 1009146);
+    const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
     this.marvelService.getCharacter(id).then(this.onCharLoaded)
   };
 
@@ -38,7 +38,7 @@ class RandomChar extends Component {
           />
           <div className="randomchar__info">
             <p className="randomchar__name">{name}</p>
-            <p className="randomchar__descr">{descriprion}</p>
+            <p className="randomchar__descr">{descriprion ? descriprion.slice(0, 150) + '...' : 'To see the description follow bellow'}</p>
             <div className="randomchar__btns">
               <a href={homepage} className="button button__main">
                 <div className="inner">homepage</div>
